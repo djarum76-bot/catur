@@ -4,14 +4,16 @@ enum ChessType { pawn, rook, knight, bishop, queen, king }
 class ChessModel{
   ChessModel({
     required this.id,
-    required this.index,
+    required this.initial,
+    required this.position,
     required this.isAlive,
     required this.color,
     required this.type,
   });
 
   final int id;
-  int index;
+  final List<int> initial;
+  List<int> position;
   final bool isAlive;
   final ChessColor color;
   final ChessType type;

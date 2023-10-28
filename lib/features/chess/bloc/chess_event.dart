@@ -8,14 +8,20 @@ abstract class ChessEvent extends Equatable{
 class ChessInitial extends ChessEvent{}
 
 class ChessTapped extends ChessEvent{
-  final int position;
+  final List<int> position;
   final ChessModel chess;
 
   ChessTapped(this.position, this.chess);
 }
 
 class ChessMoved extends ChessEvent{
-  final int index;
+  final List<int> position;
 
-  ChessMoved(this.index);
+  ChessMoved(this.position);
+}
+
+class ChessRespawned extends ChessEvent{
+  final ChessModel chess;
+
+  ChessRespawned(this.chess);
 }
